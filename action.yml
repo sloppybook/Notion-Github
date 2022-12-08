@@ -1,0 +1,15 @@
+name: 'Create Notion Page in Database'
+description: 'Create Notion Page in Database'
+inputs:
+  title:
+    description: 'Title'
+    required: true
+  category:
+    description: 'Category'
+    required: true
+  issue-number:
+    description: 'Issue number'
+    required: true
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
