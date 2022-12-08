@@ -7,7 +7,7 @@ const notion = new Client({
 })
 
 const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID
-const GITHUB_REPOSITORY_URL = 'https://github.com/tommy6073/issue-and-notion-database-page'
+const GITHUB_REPOSITORY_URL = 'https://github.com/sloppybook/Notion-Github'
 
 const TITLE = 'title'
 const CATEGORY = 'category'
