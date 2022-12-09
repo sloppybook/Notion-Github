@@ -19,6 +19,7 @@ jobs:
   #         body: |
   #           Awesome body here.
   create-notion-page:
+    if: github.event_name == 'issues' && github.event.action == 'opened'
     runs-on: ubuntu-latest
     needs: create-issue
     name: Create Notion Page
@@ -26,7 +27,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Create Notion Page
-        # if: github.event_name == 'issues' && github.event.action == 'opened'
         uses: ./
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
