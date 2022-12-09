@@ -17,7 +17,8 @@ const notion = new _notionhq_client__WEBPACK_IMPORTED_MODULE_1__/* .Client */ .K
     auth: process.env.NOTION_TOKEN,
     logLevel: _notionhq_client__WEBPACK_IMPORTED_MODULE_1__/* .LogLevel.DEBUG */ ["in"].DEBUG,
 })
-
+console.log("aaaaaaa")
+console.log(process.env.NOTION_TOKEN.slice(0,2))
 const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID
 const GITHUB_REPOSITORY_URL = 'https://github.com/sloppybook/Notion-Github'
 
@@ -32,9 +33,9 @@ try {
         body: {
             parent: {database_id: NOTION_DATABASE_ID},
             properties: {
-                Title: [{text: {content: (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)(TITLE)}}],
-                Category: {name: (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)(CATEGORY)},
-                Link: `${GITHUB_REPOSITORY_URL}/issues/${(0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)(ISSUE_NUMBER)}`,
+                title: [{text: {content: (0,_actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput)(TITLE)}}],
+                // Category: {name: getInput(CATEGORY)},
+                // Link: `${GITHUB_REPOSITORY_URL}/issues/${getInput(ISSUE_NUMBER)}`,
             },
         },
     })
