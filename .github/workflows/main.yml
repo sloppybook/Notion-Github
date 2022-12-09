@@ -26,12 +26,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Create Notion Page
-        if: github.event_name == 'issues' && github.event.action == 'opened'
+        # if: github.event_name == 'issues' && github.event.action == 'opened'
         uses: ./
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
         with:
-          title: ${{ github.event.issue.title}}
+          title: "${{ github.event.issue.title}}"
           category: "development"
           issue-number: ${{ needs.create-issue.outputs.issue-number }}
