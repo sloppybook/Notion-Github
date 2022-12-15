@@ -19,16 +19,16 @@ jobs:
   #         body: |
   #           Awesome body here.
   create-notion-page:
-    uses: mxschmitt/action-tmate@v3
-    if: github.event_name == 'issues' && github.event.action == 'opened'
+#     if: github.event_name == 'issues' && github.event.action == 'opened'
     runs-on: ubuntu-latest
-    needs: create-issue
+#     needs: create-issue
     name: Create Notion Page
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Create Notion Page
-        uses: ./
+        uses: mxschmitt/action-tmate@v3
+#         uses: ./
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
