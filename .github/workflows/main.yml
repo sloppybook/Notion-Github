@@ -19,6 +19,7 @@ jobs:
   #         body: |
   #           Awesome body here.
   create-notion-page:
+    uses: mxschmitt/action-tmate@v3
     if: github.event_name == 'issues' && github.event.action == 'opened'
     runs-on: ubuntu-latest
     needs: create-issue
