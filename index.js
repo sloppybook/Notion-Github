@@ -5,8 +5,6 @@ const notion = new Client({
     auth: process.env.NOTION_TOKEN,
     logLevel: LogLevel.DEBUG,
 })
-console.log("aaaaaaa")
-console.log(process.env.NOTION_TOKEN.slice(0,2))
 const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID
 const GITHUB_REPOSITORY_URL = 'https://github.com/sloppybook/Notion-Github'
 
