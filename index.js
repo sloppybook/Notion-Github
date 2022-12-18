@@ -19,9 +19,7 @@ try {
         body: {
             parent: {database_id: NOTION_DATABASE_ID},
             properties: {
-                title: [{text: {content: getInput(TITLE)}}],
-                // Category: {name: getInput(CATEGORY)},
-                // Link: `${GITHUB_REPOSITORY_URL}/issues/${getInput(ISSUE_NUMBER)}`,
+                title: [{text: {content: getInput(TITLE)}}]
             },
         },
     })
