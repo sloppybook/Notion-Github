@@ -1,0 +1,23 @@
+name: Create GitHub Issue and Notion Database Page
+on:
+  workflow_dispatch:
+  issues:
+    types: labeled
+jobs:
+  copy-github-issue-to-notion:
+    if: github.event_name == 'issues' && github.event.action == 'labeled' && github.event.label.name == 'Notion'
+#     if: github.event_name == 'issues' && github.event.action == 'opened'
+    runs-on: ubuntu-latest
+    name: Create Notion Page
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Create Notion Page
+        uses: ./
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        with:
+          title: "${{ github.event.issue.title}}"
+          category: "development"
+          issue-number: ${{ needs.create-issue.outputs.issue-number }}
