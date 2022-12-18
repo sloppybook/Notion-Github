@@ -6,7 +6,6 @@ on:
 jobs:
   copy-github-issue-to-notion:
     if: github.event_name == 'issues' && github.event.action == 'labeled' && github.event.label.name == 'Notion'
-#     if: github.event_name == 'issues' && github.event.action == 'opened'
     runs-on: ubuntu-latest
     name: Create Notion Page
     steps:
