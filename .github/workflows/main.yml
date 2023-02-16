@@ -16,6 +16,7 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          GITHUB_REPOSITORY_URL: ${{ secrets.GITHUB_REPOSITORY_URL }}
         with:
           title: "${{ github.event.issue.title}}"
           category: "development"
